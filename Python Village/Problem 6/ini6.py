@@ -1,15 +1,16 @@
-
+d = {}
+a = []
 
 with open ("rosalind_ini6.txt", "r") as f:
-    s = f.readline()
+    s = f.readline().replace("\n", "")
+    a = s.split(" ")
 
-d = {}
-
-for word in s.split(" "):
-    try:
+for word in a:
+    try:    
         d[word] += 1
     except:
-        d[word] = 1
+         d[word] = 1
+    
 
 for key, value in d.items():
     print key + " " + str(value)
